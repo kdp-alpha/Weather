@@ -18,8 +18,11 @@ app.listen(port,hostname,()=>{
 
 
 app.post('/',async(req,res) => {
-    console.log(req.body)
-    // const weather = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.api_key}&q=${city}&aqi=no`)
-    // res.send(weather.data)
-    // console.log(weather.data)
+    const {city} = req.body
+
+    
+
+    const weather = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.api_key}&q=${city}&aqi=no`)
+    await res.send(weather.data)
+     
 })

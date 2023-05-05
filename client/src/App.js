@@ -1,11 +1,16 @@
-import React from 'react'
-import Page from './components/Page'
+import React from "react";
+import Page from "./components/Page";
+import Weather from "./components/Weather";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
-    <>
-      <Page />
-    </>
-  )
-}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Page />}/>
+        <Route path="/weather" element={<Weather />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
